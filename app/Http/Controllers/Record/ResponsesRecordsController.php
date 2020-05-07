@@ -13,7 +13,7 @@ class ResponsesRecordsController extends Controller
         $template = new RecordsTemplate($request, 'responsesAllRecords');
         $validation = $template->callValidation();
 
-        if ($validation != true) {
+        if ($validation != 1) {
             return $validation;
         }
 
@@ -33,7 +33,7 @@ class ResponsesRecordsController extends Controller
         $template = new RecordsTemplate($request, 'responsesSpecifyRecord');
         $validation = $template->callValidation();
 
-        if ($validation != true) {
+        if ($validation != 1) {
             return $validation;
         }
 
@@ -53,7 +53,7 @@ class ResponsesRecordsController extends Controller
         $template = new RecordsTemplate($request, 'insertRecord');
         $validation = $template->callValidation();
 
-        if ($validation != true) {
+        if ($validation != 1) {
             return $validation;
         }
 
@@ -73,7 +73,7 @@ class ResponsesRecordsController extends Controller
         $template = new RecordsTemplate($request, 'deleteRecord');
         $validation = $template->callValidation();
 
-        if ($validation != true) {
+        if ($validation != 1) {
             return $validation;
         }
 
