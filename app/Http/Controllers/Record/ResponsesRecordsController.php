@@ -50,6 +50,8 @@ class ResponsesRecordsController extends Controller
 
     public function insertRecord(Request $request)
     {
+        echo (json_encode($request->all()));
+
         $template = new RecordsTemplate($request, 'insertRecord');
         $validation = $template->callValidation();
 
