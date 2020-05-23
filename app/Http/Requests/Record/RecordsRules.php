@@ -94,6 +94,19 @@ class RecordsRules extends FormRequest implements BaseRules
     {
         return [
             'id' => 'exists:records,id',
+            'taken_by' => 'required',
+            'taken_at' => 'required',
+            'staff_number' => 'required',
+            'department' => 'required',
+            'contact' => 'required',
+            'status' => 'required',
+            'is_returned' => 'required',
+            'remark' => 'nullable',
+            'hired_out_by' => 'required',
+            'hired_out_at' => 'date',
+            'returned_by' => 'nullable',
+            'returned_at' => 'nullable|date',
+            'items_records' => 'required',
         ];
     }
 

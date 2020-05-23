@@ -33,7 +33,7 @@ Route::prefix('v1')->group(function () {
     Route::post('records', 'Record\ResponsesRecordsController@insertRecord');
 
     // Update Record
-    Route::put('records/{id}', 'Record\ResponsesRecordsController@insertRecord');
+    Route::put('records/{id}', 'Record\ResponsesRecordsController@updateRecord');
 
     // Delete Record
     Route::delete('records/{id}', 'Record\ResponsesRecordsController@deleteRecord');

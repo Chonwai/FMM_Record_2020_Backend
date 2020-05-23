@@ -58,7 +58,17 @@ class RecordsRepository implements InterfaceBasicRepository
 
     public function update($request)
     {
-
+        $data = DB::transaction(function () use ($request) {
+            $recordUpdateObject = $request->all();
+            unset($recordUpdateObject['items_records']);
+            $record = Records::where('id', $request->id)->update($recordUpdateObject);
+            foreach ($request->items_records as $item) {
+                ItemsRecords::where('id', $item['id'])->update($item);
+            }
+            $record = $this->getSpecify($request);
+            return $record;
+        });
+        return $data;
     }
 
     public function delete($request)

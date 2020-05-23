@@ -50,9 +50,26 @@ class ResponsesRecordsController extends Controller
 
     public function insertRecord(Request $request)
     {
-        echo (json_encode($request->all()));
-
         $template = new RecordsTemplate($request, 'insertRecord');
+        $validation = $template->callValidation();
+
+        if ($validation != 1) {
+            return $validation;
+        }
+
+        $service = $template->callServices();
+
+        $data = $template->callRepository();
+
+        $data = $template->callModelRelations($data);
+
+        $data = $template->integradeMessage($data);
+
+        return $data;
+    }
+
+    public function updateRecord(Request $request) {
+        $template = new RecordsTemplate($request, 'updateRecord');
         $validation = $template->callValidation();
 
         if ($validation != 1) {

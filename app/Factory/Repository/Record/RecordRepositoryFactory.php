@@ -43,6 +43,9 @@ class RecordRepositoryFactory extends AbstractFactory
             case 'insertRecord':
                 $data = RecordReposity::getInstance()->insert($request);
                 break;
+            case 'updateRecord':
+                $data = RecordReposity::getInstance()->update($request);
+                break;
             case 'deleteRecord':
                 $data = RecordReposity::getInstance()->delete($request);
                 break;

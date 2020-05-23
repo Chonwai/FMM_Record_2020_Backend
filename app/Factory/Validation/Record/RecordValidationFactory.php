@@ -43,6 +43,9 @@ class RecordValidationFactory extends AbstractFactory
             case 'insertRecord':
                 $validation = RecordValidation::getInstance()->insert($request);
                 break;
+            case 'updateRecord':
+                $validation = RecordValidation::getInstance()->update($request);
+                break;
             case 'deleteRecord':
                 $validation = RecordValidation::getInstance()->delete($request);
                 break;
