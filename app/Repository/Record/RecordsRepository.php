@@ -31,8 +31,7 @@ class RecordsRepository implements InterfaceBasicRepository
 
     public function getAll()
     {
-        $data = Records::paginate(20);
-        // $data->items_records;
+        $data = Records::paginate(20)->sortByDesc("id");
         return $data;
     }
 
