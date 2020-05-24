@@ -14,7 +14,7 @@ class Records extends Model
      * @var array
      */
     protected $fillable = [
-        'taken_by', 'taken_at', 'staff_number', 'department', 'contact', 'status', 'is_returned', 'remark', 'hired_out_by', 'hired_out_at', 'returned_by', 'returned_at',
+        'taken_by', 'taken_at', 'will_return_at', 'staff_number', 'department', 'contact', 'status', 'is_returned', 'remark', 'hired_out_by', 'hired_out_at', 'returned_by', 'returned_at',
     ];
 
     /**
@@ -33,6 +33,7 @@ class Records extends Model
      */
     protected $casts = [
         'taken_at' => 'datetime:Y-m-d',
+        'will_return_at' => 'datetime:Y-m-d',
         'is_returned' => 'boolean',
         'hired_out_at' => 'datetime:Y-m-d',
         'returned_at' => 'datetime:Y-m-d',
