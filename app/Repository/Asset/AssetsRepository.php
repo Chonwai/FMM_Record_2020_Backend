@@ -4,7 +4,6 @@ namespace App\Repository\Asset;
 
 use App\Models\Assets;
 use App\Repository\InterfaceBasicRepository;
-use Illuminate\Support\Facades\DB;
 
 class AssetsRepository implements InterfaceBasicRepository
 {
@@ -42,12 +41,12 @@ class AssetsRepository implements InterfaceBasicRepository
 
     public function insert($request)
     {
-        // 
+        //
     }
 
     public function update($request)
     {
-        // 
+        //
     }
 
     public function delete($request)
