@@ -6,7 +6,7 @@ use App\Factory\Repository\Asset\AssetRepositoryFactory;
 use App\Factory\Validation\Asset\AssetValidationFactory;
 use App\Template\BaseTemplate;
 
-class RecordsTemplate extends BaseTemplate
+class AssetsTemplate extends BaseTemplate
 {
     private $request;
     private $name;

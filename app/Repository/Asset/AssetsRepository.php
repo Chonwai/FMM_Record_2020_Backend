@@ -30,7 +30,7 @@ class AssetsRepository implements InterfaceBasicRepository
 
     public function getAll()
     {
-        $data = Assets::orderBy('id', 'desc')->paginate(20);
+        $data = Assets::orderBy('id')->paginate(20);
         return $data;
     }
 
