@@ -45,4 +45,7 @@ Route::prefix('v1')->group(function () {
      */
     // Get All Assets
     Route::get('assets/all', 'Asset\AssetsController@responsesAllAssets');
+
+    // Get Specify Asset
+    Route::get('assets/{id}', 'Asset\AssetsController@responsesSpecifyAsset');
 });
