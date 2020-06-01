@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Template\RecordsTemplate;
 use Illuminate\Http\Request;
 
-class ResponsesRecordsController extends Controller
+class RecordsController extends Controller
 {
     public function responsesAllRecords(Request $request)
     {

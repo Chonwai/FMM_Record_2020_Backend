@@ -19,22 +19,30 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
     /**
-     * Record API ------------------------------------------------------------
+     * Records API ------------------------------------------------------------
      *
      * @api
      */
     // Get All Records
-    Route::get('records/all', 'Record\ResponsesRecordsController@responsesAllRecords');
+    Route::get('records/all', 'Record\RecordsController@responsesAllRecords');
 
     // Get Specify Record
-    Route::get('records/{id}', 'Record\ResponsesRecordsController@responsesSpecifyRecord');
+    Route::get('records/{id}', 'Record\RecordsController@responsesSpecifyRecord');
 
     // Insert Record
-    Route::post('records', 'Record\ResponsesRecordsController@insertRecord');
+    Route::post('records', 'Record\RecordsController@insertRecord');
 
     // Update Record
-    Route::put('records/{id}/update', 'Record\ResponsesRecordsController@updateRecord');
+    Route::put('records/{id}/update', 'Record\RecordsController@updateRecord');
 
     // Delete Record
-    Route::delete('records/{id}', 'Record\ResponsesRecordsController@deleteRecord');
+    Route::delete('records/{id}', 'Record\RecordsController@deleteRecord');
+
+    /**
+     * Assets API ------------------------------------------------------------
+     *
+     * @api
+     */
+    // Get All Assets
+    Route::get('assets/all', 'Asset\AssetsController@responsesAllAssets');
 });
