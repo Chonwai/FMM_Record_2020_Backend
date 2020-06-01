@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Factory\Validation\Record;
+namespace App\Factory\Validation\Asset;
 
 use App\Factory\Validation\InterfaceBasic;
 use App\Http\Requests\Asset\AssetsRules;

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Factory\Validation\Asset;
+namespace App\Factory\Repository\Asset;
 
-use App\Factory\Validation\AbstractFactory;
-use App\Factory\Validation\Asset\AssetValidation;
+use App\Factory\Repository\AbstractFactory;
+use App\Factory\Repository\Asset\AssetReposity;
 use App\Utils\ResponseStatusUtils;
 use App\Utils\Utils;
 
-class AssetValidationFactory extends AbstractFactory
+class AssetRepositoryFactory extends AbstractFactory
 {
     /**
      * Create the Singleton Pattern
@@ -29,36 +29,35 @@ class AssetValidationFactory extends AbstractFactory
         return self::$_instance;
     }
 
-    public function doValidation($request, $name)
+    public function doQuery($request, $name)
     {
-        $validation = false;
+        $data = null;
 
         switch ($name) {
             case 'responsesAllAssets':
-                $validation = AssetValidation::getInstance()->responseAll($request);
+                $data = AssetReposity::getInstance()->responseAll($request);
                 break;
             case 'responsesSpecifyAsset':
-                $validation = AssetValidation::getInstance()->responseSpecify($request);
+                $data = AssetReposity::getInstance()->responseSpecify($request);
                 break;
             case 'insertAsset':
-                $validation = AssetValidation::getInstance()->insert($request);
+                $data = AssetReposity::getInstance()->insert($request);
                 break;
             case 'updateAsset':
-                $validation = AssetValidation::getInstance()->update($request);
+                $data = AssetReposity::getInstance()->update($request);
                 break;
             case 'deleteAsset':
-                $validation = AssetValidation::getInstance()->delete($request);
+                $data = AssetReposity::getInstance()->delete($request);
                 break;
             default:
                 # code...
                 break;
         }
 
-        if ($validation->fails()) {
-            $res = Utils::integradeResponseMessage(ResponseStatusUtils::validatorErrorMessage($validation), false);
-            return $res;
+        if ($data == true) {
+            return $data;
         } else {
-            return true;
+            return Utils::integradeResponseMessage(ResponseStatusUtils::unknownProblems(), false);
         }
     }
 }

@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Repository\Asset;
+namespace App\Factory\Repository\Asset;
 
-use App\Models\Assets;
-use App\Repository\InterfaceBasicRepository;
-use Illuminate\Support\Facades\DB;
+use App\Factory\Validation\InterfaceBasic;
+use App\Repository\Asset\AssetsRepository;
 
-class AssetsRepository implements InterfaceBasicRepository
+class AssetReposity implements InterfaceBasic
 {
     /**
      * Create the Singleton Pattern
@@ -28,31 +27,33 @@ class AssetsRepository implements InterfaceBasicRepository
         return self::$_instance;
     }
 
-    public function getAll()
+    public function responseAll()
     {
-        $data = Assets::orderBy('id', 'desc')->paginate(20);
+        $data = AssetsRepository::getInstance()->getAll();
         return $data;
     }
 
-    public function getSpecify($request)
+    public function responseSpecify($request)
     {
-        $data = Assets::where('id', '=', $request->id)->get();
+        $data = AssetsRepository::getInstance()->getSpecify($request);
         return $data;
     }
 
     public function insert($request)
     {
-        // 
+        $data = AssetsRepository::getInstance()->insert($request);
+        return $data;
     }
 
     public function update($request)
     {
-        // 
+        $data = AssetsRepository::getInstance()->update($request);
+        return $data;
     }
 
     public function delete($request)
     {
-        $data = Assets::where('id', '=', $request->id)->delete();
+        $data = AssetsRepository::getInstance()->delete($request);
         return $data;
     }
 }

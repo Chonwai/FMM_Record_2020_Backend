@@ -5,7 +5,7 @@ namespace App\Http\Requests\Asset;
 use App\Http\Requests\BaseRules;
 use Illuminate\Foundation\Http\FormRequest;
 
-class AssetsRules extends FormRequest
+class AssetsRules extends FormRequest implements BaseRules
 {
     /**
      * Create the Singleton Pattern
