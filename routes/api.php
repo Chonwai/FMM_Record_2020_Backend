@@ -52,10 +52,10 @@ Route::prefix('v1')->group(function () {
     // Insert Asset
     Route::post('assets', 'Asset\AssetsController@insertAsset');
 
-    // Update Record
+    // Update Asset
     Route::put('assets/{id}/update', 'Asset\AssetsController@updateAsset');
 
-    // Delete Record
+    // Delete Asset
     Route::delete('assets/{id}', 'Asset\AssetsController@deleteAsset');
 
     /**
@@ -72,6 +72,9 @@ Route::prefix('v1')->group(function () {
     // Insert User
     Route::post('users', 'User\UsersController@insertUser');
 
-    // Update Record
+    // Update User
     Route::put('users/{id}/update', 'User\UsersController@updateUser');
+
+    // Delete User
+    Route::delete('users/{id}', 'User\UsersController@deleteUser');
 });
