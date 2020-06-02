@@ -41,7 +41,8 @@ class AssetsRepository implements InterfaceBasicRepository
 
     public function insert($request)
     {
-        //
+        $data = Assets::create($request->all());
+        return $data;
     }
 
     public function update($request)

@@ -48,4 +48,7 @@ Route::prefix('v1')->group(function () {
 
     // Get Specify Asset
     Route::get('assets/{id}', 'Asset\AssetsController@responsesSpecifyAsset');
+
+    // Insert Asset
+    Route::post('assets', 'Asset\AssetsController@insertAsset');
 });

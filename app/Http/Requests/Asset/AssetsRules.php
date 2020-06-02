@@ -69,19 +69,16 @@ class AssetsRules extends FormRequest implements BaseRules
     public function insertRules()
     {
         return [
-            'taken_by' => 'required',
-            'taken_at' => 'required',
-            'staff_number' => 'required',
-            'department' => 'required',
-            'contact' => 'required',
-            'status' => 'required',
-            'is_returned' => 'required',
-            'remark' => 'nullable',
-            'hired_out_by' => 'required',
-            'hired_out_at' => 'date',
-            'returned_by' => 'nullable',
-            'returned_at' => 'nullable|date',
-            'items_records' => 'required',
+            'name' => 'required',
+            'state' => 'required',
+            'acquired_at' => 'required|date',
+            'purchase_price' => 'nullable|numeric',
+            'current_value' => 'required|numeric',
+            'location' => 'required',
+            'manufacturer' => 'required',
+            'owner' => 'required',
+            'asset_id' => 'required',
+            'retired_at' => 'date',
         ];
     }
 
@@ -93,20 +90,16 @@ class AssetsRules extends FormRequest implements BaseRules
     public function updateRules()
     {
         return [
-            'id' => 'exists:records,id',
-            'taken_by' => 'required',
-            'taken_at' => 'required',
-            'staff_number' => 'required',
-            'department' => 'required',
-            'contact' => 'required',
-            'status' => 'required',
-            'is_returned' => 'required',
-            'remark' => 'nullable',
-            'hired_out_by' => 'required',
-            'hired_out_at' => 'date',
-            'returned_by' => 'nullable',
-            'returned_at' => 'nullable|date',
-            'items_records' => 'required',
+            'name' => 'required',
+            'state' => 'required',
+            'acquired_at' => 'required|date',
+            'purchase_price' => 'nullable|numeric',
+            'current_value' => 'required|numeric',
+            'location' => 'required',
+            'manufacturer' => 'required',
+            'owner' => 'required',
+            'asset_id' => 'required',
+            'retired_at' => 'date',
         ];
     }
 

@@ -25,7 +25,7 @@ class AssetsTemplate extends BaseTemplate
 
     public function callServices()
     {
-
+        // 
     }
 
     public function callRepository()
@@ -36,9 +36,6 @@ class AssetsTemplate extends BaseTemplate
 
     public function callModelRelations($data)
     {
-        foreach ($data as $item) {
-            $item->items_records = $item->items_records;
-        }
         return $data;
     }
 }

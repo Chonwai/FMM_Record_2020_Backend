@@ -25,7 +25,7 @@ class RecordsTemplate extends BaseTemplate
 
     public function callServices()
     {
-
+        
     }
 
     public function callRepository()
