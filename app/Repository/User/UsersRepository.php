@@ -29,7 +29,7 @@ class UsersRepository implements InterfaceBasicRepository
 
     public function getAll()
     {
-        $data = Users::orderBy('id')->paginate(20);
+        $data = Users::orderBy('id', 'desc')->paginate(20);
         return $data;
     }
 

@@ -34,19 +34,19 @@ class UserValidationFactory extends AbstractFactory
         $validation = false;
 
         switch ($name) {
-            case 'responsesAllAssets':
+            case 'responsesAllUsers':
                 $validation = UserValidation::getInstance()->responseAll($request);
                 break;
-            case 'responsesSpecifyAsset':
+            case 'responsesSpecifyUser':
                 $validation = UserValidation::getInstance()->responseSpecify($request);
                 break;
-            case 'insertAsset':
+            case 'insertUser':
                 $validation = UserValidation::getInstance()->insert($request);
                 break;
-            case 'updateAsset':
+            case 'updateUser':
                 $validation = UserValidation::getInstance()->update($request);
                 break;
-            case 'deleteAsset':
+            case 'deleteUser':
                 $validation = UserValidation::getInstance()->delete($request);
                 break;
             default:
