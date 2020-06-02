@@ -47,7 +47,8 @@ class AssetsRepository implements InterfaceBasicRepository
 
     public function update($request)
     {
-        //
+        $data = Assets::where('id', '=', $request->id)->update($request->all());
+        return $data;
     }
 
     public function delete($request)

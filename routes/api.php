@@ -53,7 +53,7 @@ Route::prefix('v1')->group(function () {
     Route::post('assets', 'Asset\AssetsController@insertAsset');
 
     // Update Record
-    Route::put('records/{id}/update', 'Record\RecordsController@updateRecord');
+    Route::put('assets/{id}/update', 'Asset\AssetsController@updateAsset');
 
     // Delete Record
     Route::delete('assets/{id}', 'Asset\AssetsController@deleteAsset');
