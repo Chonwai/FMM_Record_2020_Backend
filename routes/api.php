@@ -65,4 +65,7 @@ Route::prefix('v1')->group(function () {
      */
     // Get All Users
     Route::get('users/all', 'User\UsersController@responsesAllUsers');
+
+    // Get Specify User
+    Route::get('users/{id}', 'User\UsersController@responsesSpecifyUser');
 });

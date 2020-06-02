@@ -26,4 +26,23 @@ class UsersController extends Controller
 
         return $data;
     }
+
+    public function responsesSpecifyUser(Request $request) {
+        $template = new UsersTemplate($request, 'responsesSpecifyUser');
+        $validation = $template->callValidation();
+
+        if ($validation != 1) {
+            return $validation;
+        }
+
+        $service = $template->callServices();
+
+        $data = $template->callRepository();
+
+        $data = $template->callModelRelations($data);
+
+        $data = $template->integradeMessage($data);
+
+        return $data;
+    }
 }
