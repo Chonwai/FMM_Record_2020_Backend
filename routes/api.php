@@ -57,4 +57,12 @@ Route::prefix('v1')->group(function () {
 
     // Delete Record
     Route::delete('assets/{id}', 'Asset\AssetsController@deleteAsset');
+
+    /**
+     * Users API ------------------------------------------------------------
+     *
+     * @api
+     */
+    // Get All Users
+    Route::get('users/all', 'User\UsersController@responsesAllUsers');
 });
