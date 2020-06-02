@@ -68,4 +68,10 @@ Route::prefix('v1')->group(function () {
 
     // Get Specify User
     Route::get('users/{id}', 'User\UsersController@responsesSpecifyUser');
+
+    // Insert User
+    Route::post('users', 'User\UsersController@insertUser');
+
+    // Update Record
+    Route::put('users/{id}/update', 'User\UsersController@updateUser');
 });

@@ -68,7 +68,12 @@ class UsersRules extends FormRequest
     public function insertRules()
     {
         return [
-            // 
+            'name' => 'required',
+            'email' => 'nullable|email',
+            'contact' => 'required',
+            'staff_number' => 'required',
+            'department' => 'required',
+            'status' => 'required',
         ];
     }
 
@@ -80,7 +85,12 @@ class UsersRules extends FormRequest
     public function updateRules()
     {
         return [
-            // 
+            'name' => 'required',
+            'email' => 'nullable|email',
+            'contact' => 'required',
+            'staff_number' => 'required',
+            'department' => 'required',
+            'status' => 'required',
         ];
     }
 
