@@ -59,22 +59,22 @@ Route::prefix('v1')->group(function () {
     Route::delete('assets/{id}', 'Asset\AssetsController@deleteAsset');
 
     /**
-     * Users API ------------------------------------------------------------
+     * Tenants API ------------------------------------------------------------
      *
      * @api
      */
-    // Get All Users
-    Route::get('users/all', 'User\UsersController@responsesAllUsers');
+    // Get All Tenants
+    Route::get('tenants/all', 'Tenant\TenantsController@responsesAllTenants');
 
-    // Get Specify User
-    Route::get('users/{id}', 'User\UsersController@responsesSpecifyUser');
+    // Get Specify Tenant
+    Route::get('tenants/{id}', 'Tenant\TenantsController@responsesSpecifyTenant');
 
-    // Insert User
-    Route::post('users', 'User\UsersController@insertUser');
+    // Insert Tenant
+    Route::post('tenants', 'Tenant\TenantsController@insertTenant');
 
-    // Update User
-    Route::put('users/{id}/update', 'User\UsersController@updateUser');
+    // Update Tenant
+    Route::put('tenants/{id}/update', 'Tenant\TenantsController@updateTenant');
 
-    // Delete User
-    Route::delete('users/{id}', 'User\UsersController@deleteUser');
+    // Delete Tenant
+    Route::delete('tenants/{id}', 'Tenant\TenantsController@deleteTenant');
 });

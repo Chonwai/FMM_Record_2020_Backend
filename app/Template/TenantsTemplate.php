@@ -2,11 +2,11 @@
 
 namespace App\Template;
 
-use App\Factory\Repository\User\UserRepositoryFactory;
-use App\Factory\Validation\User\UserValidationFactory;
+use App\Factory\Repository\Tenant\TenantRepositoryFactory;
+use App\Factory\Validation\Tenant\TenantValidationFactory;
 use App\Template\BaseTemplate;
 
-class UsersTemplate extends BaseTemplate
+class TenantsTemplate extends BaseTemplate
 {
     private $request;
     private $name;
@@ -19,7 +19,7 @@ class UsersTemplate extends BaseTemplate
 
     public function callValidation()
     {
-        $validation = UserValidationFactory::getInstance()->doValidation($this->request, $this->name);
+        $validation = TenantValidationFactory::getInstance()->doValidation($this->request, $this->name);
         return $validation;
     }
 
@@ -30,7 +30,7 @@ class UsersTemplate extends BaseTemplate
 
     public function callRepository()
     {
-        $data = UserRepositoryFactory::getInstance()->doQuery($this->request, $this->name);
+        $data = TenantRepositoryFactory::getInstance()->doQuery($this->request, $this->name);
         return $data;
     }
 

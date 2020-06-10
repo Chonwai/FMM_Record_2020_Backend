@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Factory\Repository\User;
+namespace App\Factory\Repository\Tenant;
 
 use App\Factory\Repository\AbstractFactory;
-use App\Factory\Repository\User\UserReposity;
+use App\Factory\Repository\Tenant\TenantReposity;
 use App\Utils\ResponseStatusUtils;
 use App\Utils\Utils;
 
-class UserRepositoryFactory extends AbstractFactory
+class TenantRepositoryFactory extends AbstractFactory
 {
     /**
      * Create the Singleton Pattern
@@ -34,20 +34,20 @@ class UserRepositoryFactory extends AbstractFactory
         $data = null;
 
         switch ($name) {
-            case 'responsesAllUsers':
-                $data = UserReposity::getInstance()->responseAll($request);
+            case 'responsesAllTenants':
+                $data = TenantReposity::getInstance()->responseAll($request);
                 break;
-            case 'responsesSpecifyUser':
-                $data = UserReposity::getInstance()->responseSpecify($request);
+            case 'responsesSpecifyTenant':
+                $data = TenantReposity::getInstance()->responseSpecify($request);
                 break;
-            case 'insertUser':
-                $data = UserReposity::getInstance()->insert($request);
+            case 'insertTenant':
+                $data = TenantReposity::getInstance()->insert($request);
                 break;
-            case 'updateUser':
-                $data = UserReposity::getInstance()->update($request);
+            case 'updateTenant':
+                $data = TenantReposity::getInstance()->update($request);
                 break;
-            case 'deleteUser':
-                $data = UserReposity::getInstance()->delete($request);
+            case 'deleteTenant':
+                $data = TenantReposity::getInstance()->delete($request);
                 break;
             default:
                 # code...

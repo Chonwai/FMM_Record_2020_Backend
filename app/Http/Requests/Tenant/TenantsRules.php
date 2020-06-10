@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\User;
+namespace App\Http\Requests\Tenant;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UsersRules extends FormRequest
+class TenantsRules extends FormRequest
 {
     /**
      * Create the Singleton Pattern
@@ -56,7 +56,7 @@ class UsersRules extends FormRequest
     public function responseSpecifyRules()
     {
         return [
-            'id' => 'required|exists:users,id',
+            'id' => 'required|exists:tenants,id',
         ];
     }
 
@@ -102,7 +102,7 @@ class UsersRules extends FormRequest
     public function deleteRules()
     {
         return [
-            'id' => 'exists:users,id',
+            'id' => 'exists:tenants,id',
         ];
     }
 }

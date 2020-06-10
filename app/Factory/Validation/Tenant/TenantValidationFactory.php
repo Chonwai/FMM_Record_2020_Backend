@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Factory\Validation\User;
+namespace App\Factory\Validation\Tenant;
 
 use App\Factory\Validation\AbstractFactory;
-use App\Factory\Validation\User\UserValidation;
+use App\Factory\Validation\Tenant\TenantValidation;
 use App\Utils\ResponseStatusUtils;
 use App\Utils\Utils;
 
-class UserValidationFactory extends AbstractFactory
+class TenantValidationFactory extends AbstractFactory
 {
     /**
      * Create the Singleton Pattern
@@ -34,20 +34,20 @@ class UserValidationFactory extends AbstractFactory
         $validation = false;
 
         switch ($name) {
-            case 'responsesAllUsers':
-                $validation = UserValidation::getInstance()->responseAll($request);
+            case 'responsesAllTenants':
+                $validation = TenantValidation::getInstance()->responseAll($request);
                 break;
-            case 'responsesSpecifyUser':
-                $validation = UserValidation::getInstance()->responseSpecify($request);
+            case 'responsesSpecifyTenant':
+                $validation = TenantValidation::getInstance()->responseSpecify($request);
                 break;
-            case 'insertUser':
-                $validation = UserValidation::getInstance()->insert($request);
+            case 'insertTenant':
+                $validation = TenantValidation::getInstance()->insert($request);
                 break;
-            case 'updateUser':
-                $validation = UserValidation::getInstance()->update($request);
+            case 'updateTenant':
+                $validation = TenantValidation::getInstance()->update($request);
                 break;
-            case 'deleteUser':
-                $validation = UserValidation::getInstance()->delete($request);
+            case 'deleteTenant':
+                $validation = TenantValidation::getInstance()->delete($request);
                 break;
             default:
                 # code...

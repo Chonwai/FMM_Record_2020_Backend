@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Factory\Repository\User;
+namespace App\Factory\Repository\Tenant;
 
 use App\Factory\Validation\InterfaceBasic;
-use App\Repository\User\UsersRepository;
+use App\Repository\Tenant\TenantsRepository;
 
-class UserReposity implements InterfaceBasic
+class TenantReposity implements InterfaceBasic
 {
     /**
      * Create the Singleton Pattern
@@ -29,31 +29,31 @@ class UserReposity implements InterfaceBasic
 
     public function responseAll()
     {
-        $data = UsersRepository::getInstance()->getAll();
+        $data = TenantsRepository::getInstance()->getAll();
         return $data;
     }
 
     public function responseSpecify($request)
     {
-        $data = UsersRepository::getInstance()->getSpecify($request);
+        $data = TenantsRepository::getInstance()->getSpecify($request);
         return $data;
     }
 
     public function insert($request)
     {
-        $data = UsersRepository::getInstance()->insert($request);
+        $data = TenantsRepository::getInstance()->insert($request);
         return $data;
     }
 
     public function update($request)
     {
-        $data = UsersRepository::getInstance()->update($request);
+        $data = TenantsRepository::getInstance()->update($request);
         return $data;
     }
 
     public function delete($request)
     {
-        $data = UsersRepository::getInstance()->delete($request);
+        $data = TenantsRepository::getInstance()->delete($request);
         return $data;
     }
 }

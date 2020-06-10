@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Tenant;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Template\UsersTemplate;
+use App\Template\TenantsTemplate;
 
-class UsersController extends Controller
+class TenantsController extends Controller
 {
-    public function responsesAllUsers(Request $request) {
-        $template = new UsersTemplate($request, 'responsesAllUsers');
+    public function responsesAllTenants(Request $request) {
+        $template = new TenantsTemplate($request, 'responsesAllTenants');
         $validation = $template->callValidation();
 
         if ($validation != 1) {
@@ -27,8 +27,8 @@ class UsersController extends Controller
         return $data;
     }
 
-    public function responsesSpecifyUser(Request $request) {
-        $template = new UsersTemplate($request, 'responsesSpecifyUser');
+    public function responsesSpecifyTenant(Request $request) {
+        $template = new TenantsTemplate($request, 'responsesSpecifyTenant');
         $validation = $template->callValidation();
 
         if ($validation != 1) {
@@ -46,8 +46,8 @@ class UsersController extends Controller
         return $data;
     }
 
-    public function insertUser(Request $request) {
-        $template = new UsersTemplate($request, 'insertUser');
+    public function insertTenant(Request $request) {
+        $template = new TenantsTemplate($request, 'insertTenant');
         $validation = $template->callValidation();
 
         if ($validation != 1) {
@@ -65,8 +65,8 @@ class UsersController extends Controller
         return $data;
     }
 
-    public function updateUser(Request $request) {
-        $template = new UsersTemplate($request, 'updateUser');
+    public function updateTenant(Request $request) {
+        $template = new TenantsTemplate($request, 'updateTenant');
         $validation = $template->callValidation();
 
         if ($validation != 1) {
@@ -84,8 +84,8 @@ class UsersController extends Controller
         return $data;
     }
 
-    public function deleteUser(Request $request) {
-        $template = new UsersTemplate($request, 'deleteUser');
+    public function deleteTenant(Request $request) {
+        $template = new TenantsTemplate($request, 'deleteTenant');
         $validation = $template->callValidation();
 
         if ($validation != 1) {

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Factory\Validation\User;
+namespace App\Factory\Validation\Tenant;
 
 use App\Factory\Validation\InterfaceBasic;
-use App\Http\Requests\User\UsersRules;
+use App\Http\Requests\Tenant\TenantsRules;
 use Illuminate\Support\Facades\Validator;
 
-class UserValidation implements InterfaceBasic
+class TenantValidation implements InterfaceBasic
 {
     /**
      * Create the Singleton Pattern
@@ -30,31 +30,31 @@ class UserValidation implements InterfaceBasic
 
     public function responseAll()
     {
-        $validator = Validator::make([], UsersRules::getInstance()->rules());
+        $validator = Validator::make([], TenantsRules::getInstance()->rules());
         return $validator;
     }
 
     public function responseSpecify($request)
     {
-        $validator = Validator::make(['id' => $request->id], UsersRules::getInstance()->responseSpecifyRules());
+        $validator = Validator::make(['id' => $request->id], TenantsRules::getInstance()->responseSpecifyRules());
         return $validator;
     }
 
     public function insert($request)
     {
-        $validator = Validator::make($request->all(), UsersRules::getInstance()->insertRules());
+        $validator = Validator::make($request->all(), TenantsRules::getInstance()->insertRules());
         return $validator;
     }
 
     public function update($request)
     {
-        $validator = Validator::make($request->all(), UsersRules::getInstance()->updateRules());
+        $validator = Validator::make($request->all(), TenantsRules::getInstance()->updateRules());
         return $validator;
     }
 
     public function delete($request)
     {
-        $validator = Validator::make(['id' => $request->id], UsersRules::getInstance()->deleteRules());
+        $validator = Validator::make(['id' => $request->id], TenantsRules::getInstance()->deleteRules());
         return $validator;
     }
 }
