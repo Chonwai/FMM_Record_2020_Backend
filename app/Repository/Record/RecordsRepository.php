@@ -6,6 +6,7 @@ use App\Models\ItemsRecords;
 use App\Models\Records;
 use App\Repository\InterfaceBasicRepository;
 use Illuminate\Support\Facades\DB;
+use EloquentBuilder;
 
 class RecordsRepository implements InterfaceBasicRepository
 {
@@ -38,6 +39,11 @@ class RecordsRepository implements InterfaceBasicRepository
     public function getSpecify($request)
     {
         $data = Records::where('id', '=', $request->id)->get();
+        return $data;
+    }
+
+    public function getFilter($request) {
+        $data = EloquentBuilder::to(Records::class, request()->all())->orderBy('hired_out_at', 'desc')->paginate(20);
         return $data;
     }
 

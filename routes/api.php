@@ -29,6 +29,9 @@ Route::prefix('v1')->group(function () {
     // Get Specify Record
     Route::get('records/{id}', 'Record\RecordsController@responsesSpecifyRecord');
 
+    // Get Filter Records
+    Route::get('analysis/records/filter', 'Record\RecordsController@responsesFilterRecords');
+
     // Insert Record
     Route::post('records', 'Record\RecordsController@insertRecord');
 

@@ -40,6 +40,9 @@ class RecordRepositoryFactory extends AbstractFactory
             case 'responsesSpecifyRecord':
                 $data = RecordReposity::getInstance()->responseSpecify($request);
                 break;
+            case 'responsesFilterRecords':
+                $data = RecordReposity::getInstance()->responsesFilterRecords($request);
+                break;
             case 'insertRecord':
                 $data = RecordReposity::getInstance()->insert($request);
                 break;

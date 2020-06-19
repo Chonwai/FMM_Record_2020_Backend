@@ -39,6 +39,11 @@ class RecordReposity implements InterfaceBasic
         return $data;
     }
 
+    public function responsesFilterRecords($request) {
+        $data = RecordsRepository::getInstance()->getFilter($request);
+        return $data;
+    }
+
     public function insert($request)
     {
         $data = RecordsRepository::getInstance()->insert($request);
