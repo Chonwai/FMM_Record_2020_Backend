@@ -43,7 +43,12 @@ class RecordsRepository implements InterfaceBasicRepository
     }
 
     public function getFilter($request) {
-        $data = EloquentBuilder::to(Records::class, request()->all())->orderBy('hired_out_at', 'desc')->paginate(20);
+        $data = EloquentBuilder::to(Records::class, request()->all())->count();
+        return $data;
+    }
+
+    public function getAmount($request) {
+        $data = EloquentBuilder::to(Records::class, request()->all())->count();
         return $data;
     }
 

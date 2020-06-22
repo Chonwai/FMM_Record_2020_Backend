@@ -43,6 +43,9 @@ class RecordValidationFactory extends AbstractFactory
             case 'responsesFilterRecords':
                 $validation = RecordValidation::getInstance()->responseAll($request);
                 break;
+            case 'responsesAmountRecords':
+                $validation = RecordValidation::getInstance()->responseAll($request);
+                break;
             case 'insertRecord':
                 $validation = RecordValidation::getInstance()->insert($request);
                 break;

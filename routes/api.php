@@ -32,6 +32,9 @@ Route::prefix('v1')->group(function () {
     // Get Filter Records
     Route::get('analysis/records/filter', 'Record\RecordsController@responsesFilterRecords');
 
+    // Get the Amount of Records
+    Route::get('analysis/records/amount', 'Record\RecordsController@responsesAmountRecords');
+
     // Insert Record
     Route::post('records', 'Record\RecordsController@insertRecord');
 

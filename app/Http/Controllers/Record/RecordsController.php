@@ -67,6 +67,23 @@ class RecordsController extends Controller
         return $data;
     }
 
+    public function responsesAmountRecords(Request $request) {
+        $template = new RecordsTemplate($request, 'responsesAmountRecords');
+        $validation = $template->callValidation();
+
+        if ($validation != 1) {
+            return $validation;
+        }
+
+        $service = $template->callServices();
+
+        $data = $template->callRepository();
+
+        $data = $template->integradeMessage($data);
+
+        return $data;
+    }
+
     public function insertRecord(Request $request)
     {
         $template = new RecordsTemplate($request, 'insertRecord');
