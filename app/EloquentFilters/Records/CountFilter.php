@@ -17,12 +17,14 @@ class CountFilter extends Filter
      */
     public function apply(Builder $builder, $value): Builder
     {
-        if ($value == 'all') {
+        if ($value === 'all') {
             return $builder->where('id', '<>', NULL);
-        } elseif ($value == 'finished') {
+        } elseif ($value === 'finished') {
             return $builder->where('is_returned', '=', true);
-        } elseif ($value == 'not_finishe') {
+        } elseif ($value === 'not_finishe') {
             return $builder->where('is_returned', '=', false);
+        } elseif ($value === null) {
+            return $builder->where('id', '<>', NULL); 
         }
     }
 }

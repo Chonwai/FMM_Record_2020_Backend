@@ -44,7 +44,7 @@ class RecordRepositoryFactory extends AbstractFactory
                 $data = RecordReposity::getInstance()->responsesFilterRecords($request);
                 break;
             case 'responsesAmountRecords':
-                $data = RecordReposity::getInstance()->responsesFilterRecords($request);
+                $data = RecordReposity::getInstance()->responsesAmountRecords($request);
                 break;
             case 'insertRecord':
                 $data = RecordReposity::getInstance()->insert($request);

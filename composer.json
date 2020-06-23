@@ -15,7 +15,8 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-        "mohammad-fouladgar/eloquent-builder": "^2.2"
+        "mohammad-fouladgar/eloquent-builder": "^2.2",
+        "spatie/laravel-query-builder": "^2.8"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
