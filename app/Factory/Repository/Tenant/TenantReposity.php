@@ -39,6 +39,11 @@ class TenantReposity implements InterfaceBasic
         return $data;
     }
 
+    public function responseSpecifyBySearchFilter($request) {
+        $data = TenantsRepository::getInstance()->getSpecifyBySearchFilter($request);
+        return $data;
+    }
+
     public function insert($request)
     {
         $data = TenantsRepository::getInstance()->insert($request);

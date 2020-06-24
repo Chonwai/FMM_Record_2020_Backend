@@ -4,6 +4,7 @@ namespace App\Repository\Tenant;
 
 use App\Models\Tenants;
 use App\Repository\InterfaceBasicRepository;
+use EloquentBuilder;
 
 class TenantsRepository implements InterfaceBasicRepository
 {
@@ -36,6 +37,11 @@ class TenantsRepository implements InterfaceBasicRepository
     public function getSpecify($request)
     {
         $data = Tenants::where('id', '=', $request->id)->get();
+        return $data;
+    }
+
+    public function getSpecifyBySearchFilter($request) {
+        $data = EloquentBuilder::to(Tenants::class, $request->all())->first();
         return $data;
     }
 

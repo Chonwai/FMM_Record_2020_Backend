@@ -40,6 +40,9 @@ class TenantValidationFactory extends AbstractFactory
             case 'responsesSpecifyTenant':
                 $validation = TenantValidation::getInstance()->responseSpecify($request);
                 break;
+            case 'responsesSpecifyTenantBySearchFilter':
+                $validation = TenantValidation::getInstance()->responseAll($request);
+                break;
             case 'insertTenant':
                 $validation = TenantValidation::getInstance()->insert($request);
                 break;

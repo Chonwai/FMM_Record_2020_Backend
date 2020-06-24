@@ -75,6 +75,9 @@ Route::prefix('v1')->group(function () {
     // Get Specify Tenant
     Route::get('tenants/{id}', 'Tenant\TenantsController@responsesSpecifyTenant');
 
+    // Get Specify Tenant By Search Filter
+    Route::get('tenants/search/filter', 'Tenant\TenantsController@responsesSpecifyTenantBySearchFilter');
+
     // Insert Tenant
     Route::post('tenants', 'Tenant\TenantsController@insertTenant');
 

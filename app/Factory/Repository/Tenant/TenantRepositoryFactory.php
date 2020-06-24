@@ -40,6 +40,9 @@ class TenantRepositoryFactory extends AbstractFactory
             case 'responsesSpecifyTenant':
                 $data = TenantReposity::getInstance()->responseSpecify($request);
                 break;
+            case 'responsesSpecifyTenantBySearchFilter':
+                $data = TenantReposity::getInstance()->responseSpecifyBySearchFilter($request);
+                break;
             case 'insertTenant':
                 $data = TenantReposity::getInstance()->insert($request);
                 break;

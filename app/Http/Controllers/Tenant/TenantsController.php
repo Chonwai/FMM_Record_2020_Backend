@@ -46,6 +46,25 @@ class TenantsController extends Controller
         return $data;
     }
 
+    public function responsesSpecifyTenantBySearchFilter(Request $request) {
+        $template = new TenantsTemplate($request, 'responsesSpecifyTenantBySearchFilter');
+        $validation = $template->callValidation();
+
+        if ($validation != 1) {
+            return $validation;
+        }
+
+        $service = $template->callServices();
+
+        $data = $template->callRepository();
+
+        $data = $template->callModelRelations($data);
+
+        $data = $template->integradeMessage($data);
+
+        return $data;
+    }
+
     public function insertTenant(Request $request) {
         $template = new TenantsTemplate($request, 'insertTenant');
         $validation = $template->callValidation();

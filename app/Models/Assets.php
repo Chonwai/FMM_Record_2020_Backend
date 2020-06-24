@@ -32,6 +32,9 @@ class Assets extends Model
      * @var array
      */
     protected $casts = [
-        // 
+        'acquired_at' => 'datetime:Y-m-d',
+        'retired_at' => 'datetime:Y-m-d',
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
     ];
 }
