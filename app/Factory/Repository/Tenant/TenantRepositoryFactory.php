@@ -57,10 +57,12 @@ class TenantRepositoryFactory extends AbstractFactory
                 break;
         }
 
-        if ($data == true) {
-            return $data;
-        } else {
-            return Utils::integradeResponseMessage(ResponseStatusUtils::unknownProblems(), false);
-        }
+        return $data;
+
+        // if ($data == true) {
+        //     return $data;
+        // } else {
+        //     return Utils::integradeResponseMessage(ResponseStatusUtils::unknownProblems(), false);
+        // }
     }
 }
