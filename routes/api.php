@@ -19,6 +19,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
     /**
+     * Auth API ------------------------------------------------------------
+     *
+     * @api
+     */
+    // User Login API
+    Route::post('user/login', 'Auth\AuthController@login');
+
+    /**
      * Records API ------------------------------------------------------------
      *
      * @api

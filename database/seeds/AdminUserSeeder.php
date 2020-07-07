@@ -20,7 +20,7 @@ class AdminUserSeeder extends Seeder
             'id' => Str::uuid(),
             'staff_or_student_number' => '44813',
             'email' => 'umacfmm2020@gmail.com',
-            'password_hash' => Hash::make('12345678'),
+            'password' => Hash::make('12345678'),
             'name' => 'FMM Admin',
             'contact' => '44813',
             'last_actived_at' => Carbon::now(),
