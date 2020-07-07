@@ -27,7 +27,7 @@ class Users extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $hidden = [
-        //
+        'password',
     ];
 
     /**
@@ -37,8 +37,9 @@ class Users extends Authenticatable implements JWTSubject
      */
     protected $casts = [
         'id' => 'string',
-        'created_at' => 'datetime:Y-m-d',
-        'updated_at' => 'datetime:Y-m-d',
+        'created_at' => 'datetime:Y-m-d H:i:s',
+        'updated_at' => 'datetime:Y-m-d H:i:s',
+        'is_admin' => 'boolean',
     ];
 
     /**

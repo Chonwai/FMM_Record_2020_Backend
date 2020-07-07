@@ -5,6 +5,7 @@ namespace App\Repository\Auth;
 use App\Models\Users;
 use App\Repository\InterfaceBasicAuthRepository;
 use App\Utils\Utils;
+use Illuminate\Support\Facades\Auth;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 
@@ -42,9 +43,11 @@ class AuthRepository implements InterfaceBasicAuthRepository
             ], 401);
         } else {
             $token = Utils::responseWithToken($token);
+            $currentUser['user_details'] = Auth::user();
+            $currentUser['token'] = $token;
         }
 
-        return $token;
+        return $currentUser;
     }
 
     public function registration($request)
