@@ -4,10 +4,10 @@ namespace App\Repository\Auth;
 
 use App\Models\Users;
 use App\Repository\InterfaceBasicAuthRepository;
+use App\Utils\ResponseStatusUtils;
 use App\Utils\Utils;
 use Illuminate\Support\Facades\Auth;
 use JWTAuth;
-use Tymon\JWTAuth\Exceptions\JWTException;
 
 class AuthRepository implements InterfaceBasicAuthRepository
 {
@@ -37,10 +37,7 @@ class AuthRepository implements InterfaceBasicAuthRepository
         $token = null;
 
         if (!$token = JWTAuth::attempt($input)) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Invalid Email or Password',
-            ], 401);
+            return ResponseStatusUtils::passwordIncorrect();
         } else {
             $token = Utils::responseWithToken($token);
             $currentUser['user_details'] = Auth::user();
