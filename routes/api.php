@@ -83,6 +83,14 @@ Route::group(['middleware' => ['jwt.auth']], function() {
     
         // Delete Tenant
         Route::delete('tenants/{id}', 'Tenant\TenantsController@deleteTenant');
+
+        /**
+         * Users API ------------------------------------------------------------
+         *
+         * @api
+         */
+        // Get Owner
+        Route::get('user/owner', 'User\UsersController@responsesOwner');
     });    
 });
 
