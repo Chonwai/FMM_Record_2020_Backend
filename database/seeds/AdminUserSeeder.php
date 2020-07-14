@@ -18,10 +18,24 @@ class AdminUserSeeder extends Seeder
     {
         DB::table('users')->insert([
             'id' => Str::uuid(),
-            'staff_or_student_number' => '44813',
+            'staff_or_student_number' => '00001',
             'email' => 'umacfmm2020@gmail.com',
-            'password' => Hash::make('12345678'),
+            'password' => Hash::make('fmm2020'),
             'name' => 'FMM Admin',
+            'contact' => '00001',
+            'last_actived_at' => Carbon::now(),
+            'is_admin' => true,
+            'records_count' => 0,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('users')->insert([
+            'id' => Str::uuid(),
+            'staff_or_student_number' => '44813',
+            'email' => 'peterchiang@um.edu.mo',
+            'password' => Hash::make('fmm2020'),
+            'name' => 'Peter',
             'contact' => '44813',
             'last_actived_at' => Carbon::now(),
             'is_admin' => true,
