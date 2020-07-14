@@ -15,6 +15,10 @@ abstract class BaseTemplate
     public function integradeMessage($data)
     {
         if ($data) {
+            if ($data === 'Password Incorrect') {
+                $res = Utils::integradeResponseMessage(ResponseStatusUtils::passwordIncorrect(), false);
+                return $res;
+            }
             $res = Utils::integradeResponseMessage($data, true);
             return $res;
         } else {
