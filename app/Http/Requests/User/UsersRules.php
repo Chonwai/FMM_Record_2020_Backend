@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests\User;
 
+use App\Http\Requests\BaseRules;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UsersRules extends FormRequest
+class UsersRules extends FormRequest implements BaseRules
 {
     /**
      * Create the Singleton Pattern
@@ -45,6 +46,53 @@ class UsersRules extends FormRequest
     {
         return [
             'id' => 'required|exists:users,id',
+        ];
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function responseSpecifyRules() {
+        return [
+            'id' => 'required|exists:users,id',
+        ];
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function insertRules()
+    {
+        return [
+            // 
+        ];
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function updateRules()
+    {
+        return [
+            // 
+        ];
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function deleteRules()
+    {
+        return [
+            'id' => 'exists:records,id',
         ];
     }
 }

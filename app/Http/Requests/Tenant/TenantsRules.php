@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests\Tenant;
 
+use App\Http\Requests\BaseRules;
 use Illuminate\Foundation\Http\FormRequest;
 
-class TenantsRules extends FormRequest
+class TenantsRules extends FormRequest implements BaseRules
 {
     /**
      * Create the Singleton Pattern

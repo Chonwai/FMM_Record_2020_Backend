@@ -34,14 +34,11 @@ class UserValidationFactory extends AbstractFactory
         $validation = false;
 
         switch ($name) {
-            case 'responsesAllTenants':
+            case 'responsesAllUsers':
                 $validation = UserValidation::getInstance()->responseAll($request);
                 break;
-            case 'responsesSpecifyTenant':
+            case 'responsesSpecifyUser':
                 $validation = UserValidation::getInstance()->responseSpecify($request);
-                break;
-            case 'responsesSpecifyTenantBySearchFilter':
-                $validation = UserValidation::getInstance()->responseAll($request);
                 break;
             case 'insertTenant':
                 $validation = UserValidation::getInstance()->insert($request);

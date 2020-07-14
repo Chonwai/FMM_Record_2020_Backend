@@ -32,19 +32,19 @@ class UserRepositoryFactory extends AbstractFactory
         $data = null;
 
         switch ($name) {
-            case 'responsesAllTenants':
+            case 'responsesAllUsers':
                 $data = UserReposity::getInstance()->responseAll($request);
                 break;
-            case 'responsesSpecifyTenant':
+            case 'responsesSpecifyUser':
                 $data = UserReposity::getInstance()->responseSpecify($request);
                 break;
-            case 'insertTenant':
+            case 'insertUser':
                 $data = UserReposity::getInstance()->insert($request);
                 break;
-            case 'updateTenant':
+            case 'updateUser':
                 $data = UserReposity::getInstance()->update($request);
                 break;
-            case 'deleteTenant':
+            case 'deleteUser':
                 $data = UserReposity::getInstance()->delete($request);
                 break;
             default:
