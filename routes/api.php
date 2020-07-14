@@ -91,6 +91,9 @@ Route::group(['middleware' => ['jwt.auth']], function() {
          */
         // Get Owner
         Route::get('user/owner', 'User\UsersController@responsesOwner');
+
+        // Update User
+        Route::put('mutation/user/owner', 'User\UsersController@updateUser');
     });    
 });
 

@@ -40,13 +40,13 @@ class UserValidationFactory extends AbstractFactory
             case 'responsesSpecifyUser':
                 $validation = UserValidation::getInstance()->responseSpecify($request);
                 break;
-            case 'insertTenant':
+            case 'insertUser':
                 $validation = UserValidation::getInstance()->insert($request);
                 break;
-            case 'updateTenant':
+            case 'updateUser':
                 $validation = UserValidation::getInstance()->update($request);
                 break;
-            case 'deleteTenant':
+            case 'deleteUser':
                 $validation = UserValidation::getInstance()->delete($request);
                 break;
             default:
