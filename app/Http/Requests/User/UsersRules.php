@@ -68,7 +68,11 @@ class UsersRules extends FormRequest implements BaseRules
     public function insertRules()
     {
         return [
-            // 
+            'staff_or_student_number' => 'required|unique:users,staff_or_student_number',
+            'email' => 'required|unique:users,email',
+            'password' => 'required',
+            'name' => 'required',
+            'contact' => 'required|unique:users,contact',
         ];
     }
 

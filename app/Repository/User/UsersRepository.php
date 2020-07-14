@@ -4,7 +4,9 @@ namespace App\Repository\User;
 
 use App\Models\Users;
 use App\Repository\InterfaceBasicRepository;
+use Carbon\Carbon;
 use EloquentBuilder;
+use Illuminate\Support\Str;
 
 class UsersRepository implements InterfaceBasicRepository
 {
@@ -42,7 +44,19 @@ class UsersRepository implements InterfaceBasicRepository
 
     public function insert($request)
     {
-        $data = Users::create($request->all());
+        $data = Users::create([
+            'id' => Str::uuid(),
+            'staff_or_student_number' => $request->staff_or_student_number,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'name' => $request->name,
+            'contact' => $request->contact,
+            'last_actived_at' => Carbon::now(),
+            'is_admin' => false,
+            'records_count' => 0,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
         return $data;
     }
 

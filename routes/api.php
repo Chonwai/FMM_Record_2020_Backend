@@ -95,6 +95,12 @@ Route::group(['middleware' => ['jwt.auth']], function() {
         // Update User
         Route::put('mutation/user/owner', 'User\UsersController@updateUser');
     });    
+
+    Route::group(['middleware' => ['admin']], function () {
+        Route::prefix('/v1')->group(function () {
+            Route::post('user/registration', 'User\UsersController@insertUser');
+        });
+    });
 });
 
 Route::prefix('/v1')->group(function () {

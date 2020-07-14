@@ -4,6 +4,8 @@ namespace App\Factory\Repository\User;
 
 use App\Factory\Validation\InterfaceBasic;
 use App\Repository\User\UsersRepository;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class UserReposity implements InterfaceBasic
 {
