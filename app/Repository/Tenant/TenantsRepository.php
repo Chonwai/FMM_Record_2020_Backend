@@ -40,6 +40,11 @@ class TenantsRepository implements InterfaceBasicRepository
         return $data;
     }
 
+    public function getSpecifyByStaffNumber($request) {
+        $data = Tenants::where('staff_number', '=', $request->staff_number)->first();
+        return $data;
+    }
+
     public function getSpecifyBySearchFilter($request) {
         $data = EloquentBuilder::to(Tenants::class, $request->all())->first();
         return $data;
@@ -47,7 +52,14 @@ class TenantsRepository implements InterfaceBasicRepository
 
     public function insert($request)
     {
-        $data = Tenants::create($request->all());
+        $data = Tenants::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'contact' => $request->contact,
+            'staff_number' => $request->staff_number,
+            'department' => $request->department,
+            'status' => $request->status,
+        ]);
         return $data;
     }
 

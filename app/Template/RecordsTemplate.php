@@ -4,6 +4,7 @@ namespace App\Template;
 
 use App\Factory\Repository\Record\RecordRepositoryFactory;
 use App\Factory\Validation\Record\RecordValidationFactory;
+use App\Services\RecordsServices;
 use App\Template\BaseTemplate;
 
 class RecordsTemplate extends BaseTemplate
@@ -25,7 +26,7 @@ class RecordsTemplate extends BaseTemplate
 
     public function callServices()
     {
-        
+        RecordsServices::getInstance()->checkTenantExist($this->request);
     }
 
     public function callRepository()
