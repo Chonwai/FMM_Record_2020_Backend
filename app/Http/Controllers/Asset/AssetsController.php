@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class AssetsController extends Controller
 {
-    public function responsesAllAssets(Request $request) {
+    public function responsesAllAssets(Request $request)
+    {
         $template = new AssetsTemplate($request, 'responsesAllAssets');
         $validation = $template->callValidation();
 
@@ -27,7 +28,8 @@ class AssetsController extends Controller
         return $data;
     }
 
-    public function responsesSpecifyAsset(Request $request) {
+    public function responsesSpecifyAsset(Request $request)
+    {
         $template = new AssetsTemplate($request, 'responsesSpecifyAsset');
         $validation = $template->callValidation();
 
@@ -46,7 +48,28 @@ class AssetsController extends Controller
         return $data;
     }
 
-    public function insertAsset(Request $request) {
+    public function responsesSpecifyAssetByAssetID(Request $request)
+    {
+        $template = new AssetsTemplate($request, 'responsesSpecifyAssetByAssetID');
+        $validation = $template->callValidation();
+
+        if ($validation != 1) {
+            return $validation;
+        }
+
+        $service = $template->callServices();
+
+        $data = $template->callRepository();
+
+        $data = $template->callModelRelations($data);
+
+        $data = $template->integradeMessage($data);
+
+        return $data;
+    }
+
+    public function insertAsset(Request $request)
+    {
         $template = new AssetsTemplate($request, 'insertAsset');
         $validation = $template->callValidation();
 
@@ -65,7 +88,8 @@ class AssetsController extends Controller
         return $data;
     }
 
-    public function updateAsset(Request $request) {
+    public function updateAsset(Request $request)
+    {
         $template = new AssetsTemplate($request, 'updateAsset');
         $validation = $template->callValidation();
 
@@ -84,7 +108,8 @@ class AssetsController extends Controller
         return $data;
     }
 
-    public function deleteAsset(Request $request) {
+    public function deleteAsset(Request $request)
+    {
         $template = new AssetsTemplate($request, 'deleteAsset');
         $validation = $template->callValidation();
 

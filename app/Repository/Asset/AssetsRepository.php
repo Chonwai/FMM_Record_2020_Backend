@@ -39,6 +39,12 @@ class AssetsRepository implements InterfaceBasicRepository
         return $data;
     }
 
+    public function getSpecifyByAssetID($request)
+    {
+        $data = Assets::where('asset_id', '=', $request->id)->get();
+        return $data;
+    }
+
     public function insert($request)
     {
         $data = Assets::create($request->all());

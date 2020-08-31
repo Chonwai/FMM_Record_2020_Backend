@@ -40,6 +40,9 @@ class AssetValidationFactory extends AbstractFactory
             case 'responsesSpecifyAsset':
                 $validation = AssetValidation::getInstance()->responseSpecify($request);
                 break;
+            case 'responsesSpecifyAssetByAssetID':
+                $validation = AssetValidation::getInstance()->responseSpecifyByAssetID($request);
+                break;
             case 'insertAsset':
                 $validation = AssetValidation::getInstance()->insert($request);
                 break;

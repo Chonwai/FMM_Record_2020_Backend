@@ -40,6 +40,12 @@ class AssetValidation implements InterfaceBasic
         return $validator;
     }
 
+    public function responseSpecifyByAssetID($request)
+    {
+        $validator = Validator::make(['id' => $request->id], AssetsRules::getInstance()->responseSpecifyByAssetIDRules());
+        return $validator;
+    }
+
     public function insert($request)
     {
         $validator = Validator::make($request->all(), AssetsRules::getInstance()->insertRules());

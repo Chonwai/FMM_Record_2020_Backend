@@ -40,6 +40,9 @@ class AssetRepositoryFactory extends AbstractFactory
             case 'responsesSpecifyAsset':
                 $data = AssetReposity::getInstance()->responseSpecify($request);
                 break;
+            case 'responsesSpecifyAssetByAssetID':
+                $data = AssetReposity::getInstance()->responsesSpecifyAssetByAssetID($request);
+                break;
             case 'insertAsset':
                 $data = AssetReposity::getInstance()->insert($request);
                 break;

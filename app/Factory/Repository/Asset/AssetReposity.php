@@ -39,6 +39,12 @@ class AssetReposity implements InterfaceBasic
         return $data;
     }
 
+    public function responsesSpecifyAssetByAssetID($request)
+    {
+        $data = AssetsRepository::getInstance()->getSpecifyByAssetID($request);
+        return $data;
+    }
+
     public function insert($request)
     {
         $data = AssetsRepository::getInstance()->insert($request);

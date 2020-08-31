@@ -66,6 +66,18 @@ class AssetsRules extends FormRequest implements BaseRules
      *
      * @return array
      */
+    public function responseSpecifyByAssetIDRules()
+    {
+        return [
+            'id' => 'required|exists:assets,asset_id',
+        ];
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
     public function insertRules()
     {
         return [
